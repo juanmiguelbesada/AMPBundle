@@ -9,7 +9,10 @@
             "email": "juanmiguelbesada@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "symfony/framework-bundle": "~2.3|~3.0|^4.0",
+        "twig/twig": "~1.26|~2.0"
+    },
     "require-dev": {},
     "config": {
         "sort-packages": true
