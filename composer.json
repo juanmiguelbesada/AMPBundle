@@ -1,0 +1,22 @@
+{
+    "name": "juanmiguelbesada/amp-bundle",
+    "type": "symfony-bundle",
+    "keywords": ["AMP"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Juan Miguel Besada",
+            "email": "juanmiguelbesada@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {},
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "JuanMiguelBesada\\AMPBundle\\": "src/"
+        }
+    }
+}
