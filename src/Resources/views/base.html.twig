@@ -20,8 +20,8 @@
 
         <style amp-custom>
         {% block amp_custom_styles %}
-            {{ include('@AMP/_normalize.css.twig') }}
-            {{ include('@AMP/_bass.css.twig') }}
+            {{ include('@AMP/_normalize.css.twig')|minifyCSS }}
+            {{ include('@AMP/_bass.css.twig')|minifyCSS }}
         {% endblock amp_custom_styles %}
         </style>
     {% endblock head %}
