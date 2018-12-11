@@ -71,3 +71,26 @@ Out of the box you will get a AMP validated template with a min modifier version
     This is a valid AMP
 {% endblock %}
 ```
+
+Custom styles
+===============
+
+AmpBundle includes a twig filter to help minify your custom css. It uses the [Minify](https://github.com/matthiasmullie/minify) library by Matthias Mullie.
+
+The minifyCSS filter, strip comments, remove whitespaces, and remove any !important declaration from your css.
+
+```twig
+{# base.html.twig #}
+{% extends "@AMP/base.html.twig" %}
+
+{% block title %}Welcome to AMP{% endblock %}
+
+{% block amp_custom_styles %}
+    {{ parent() }}
+    {{ include('my_custom_twig_css.css.twig')|minifyCSS }}
+{% endblock amp_custom_styles %}
+
+{% block body %}
+    This is a valid AMP
+{% endblock %}
+```
