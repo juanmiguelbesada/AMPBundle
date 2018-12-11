@@ -11,12 +11,15 @@ class AMPExtension extends  AbstractExtension
     public function getFilters()
     {
         return [
-            new TwigFilter('minifyCSS', [$this, 'minifyCSS'])
+            new TwigFilter('minifyCSS', [$this, 'minifyCSS'], ['is_safe' => ['all']])
         ];
     }
 
     public function minifyCSS($css, array $options = [])
     {
+        //Remove any !important declaration
+        $css = str_replace('!important', '', $css);
+
         $minify = new MinifyCSS($css);
 
         if (isset($options['importExtensions']) && \is_array($options['importExtensions'])) {
